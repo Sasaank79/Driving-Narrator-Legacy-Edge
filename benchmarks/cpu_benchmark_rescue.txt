@@ -1,0 +1,3 @@
+CPU BENCHMARK (Colab Standard Instance)
+FPS: 4.68
+Latency: 213.81 ms

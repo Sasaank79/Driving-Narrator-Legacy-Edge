@@ -1,0 +1,22 @@
+venv/
+__pycache__/
+.DS_Store
+.idea/
+.vscode/
+
+# --- Heavy Media Ignored ---
+fixed_video.mp4
+ffmpeg
+*.zip
+
+# --- Demo Recordings (All excluded - too large for Git) ---
+demo_recordings/
+
+# --- Models (Keep all) ---
+# (No exclude rules here, so models/ will upload)
+
+# --- Documentation Cleanup ---
+CLEANUP.md
+Whitepaper/V*.pdf
+Whitepaper/V*.docx
+Whitepaper/For_Prep/

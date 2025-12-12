@@ -1,0 +1,17 @@
+# Driving Narrator - Requirements
+# Real-time traffic sign detection on legacy CPU hardware
+# Tested on: MacBook Air 2015 (Intel i5-5250U, 8GB RAM, macOS Monterey)
+
+# --- Core Inference ---
+ultralytics>=8.0.0          # YOLOv11 framework
+openvino>=2023.3.0          # Intel OpenVINO runtime for INT8 inference
+opencv-python>=4.8.0        # Video capture and display
+numpy>=1.24.0               # Array operations
+
+# --- Optional: Training (run in Colab instead) ---
+# torch>=2.0.0
+# torchvision>=0.15.0
+
+# --- Optional: Visualization ---
+# matplotlib>=3.8.0         # For plotting results
+# pillow>=10.0.0            # Image handling
