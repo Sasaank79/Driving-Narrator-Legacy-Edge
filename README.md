@@ -15,9 +15,10 @@
 
 | Metric | Achieved |
 |--------|----------|
-| **Inference Speed** | 13 FPS @ 720p |
+| **Inference Speed** | 14 FPS @ 720p |
 | **Accuracy** | 93.2% mAP@0.5 |
 | **Model Size** | 3.2 MB (INT8) |
+| **Speedup** | 6× over PyTorch |
 | **Hardware** | Intel i5-5250U, 8GB RAM, No GPU |
 
 This challenges the industry narrative that edge AI requires specialized accelerators (NPUs/TPUs).
@@ -30,7 +31,7 @@ This challenges the industry narrative that edge AI requires specialized acceler
 ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │  Data Curation  │ ──▶ │  Cloud Training │ ──▶ │  Quantization   │ ──▶ │ Edge Deployment │
 │   (Roboflow)    │     │  (Colab T4 GPU) │     │   (OpenVINO)    │     │  (MacBook Air)  │
-│   16K+ images   │     │   YOLOv11 Nano  │     │   FP32 → INT8   │     │   13 FPS CPU    │
+│   16K+ images   │     │   YOLOv11 Nano  │     │   FP32 → INT8   │     │   14 FPS CPU    │
 └─────────────────┘     └─────────────────┘     └─────────────────┘     └─────────────────┘
 ```
 
@@ -84,18 +85,17 @@ Driving-Narrator-Legacy-Edge/
 │   └── demo_proof/                # Detection samples
 ├── benchmarks/
 │   └── lisa_benchmark_results.txt # FPS measurements
-├── research/
-│   ├── benchmark_cpu.py           # PyTorch benchmark
-│   ├── benchmark_onnx.py          # ONNX benchmark
-│   └── benchmark_openvino.py      # OpenVINO benchmark
 ├── Whitepaper/
-│   └── V5.md                      # Technical whitepaper
-├── deploy.py                      # Main inference script ⭐
-├── app_video.py                   # Video file inference
-├── app_webcam.py                  # Webcam inference
-├── benchmark_lisa.py              # Full benchmark suite
+│   ├── main.tex                   # IEEE Conference LaTeX Source
+│   ├── fps_comparison.png         # Performance chart
+│   ├── system_architecture.png    # Pipeline diagram
+│   └── V5.md                      # Technical whitepaper text
+├── deploy.py                      # 🚀 Main inference script (14 FPS)
+├── app_video.py                   # 🗣️ Video demo with TTS Narrator
+├── app_webcam.py                  # 🎥 Webcam demo with TTS Narrator
+├── benchmark_suite.py             # 📈 Comprehensive benchmark tool
 ├── LISA_Training.ipynb            # Colab training notebook
-├── test_video.mp4                 # Sample dash-cam video (44 MB)
+├── test_video.mp4                 # Sample dash-cam video (46 MB)
 └── requirements.txt
 ```
 
@@ -105,12 +105,14 @@ Driving-Narrator-Legacy-Edge/
 
 Tested on MacBook Air 2015 (Intel i5-5250U, 8GB RAM, Intel HD 6000):
 
-| Format | mAP@0.5 | FPS | Size | Speedup |
-|--------|---------|-----|------|---------|
-| PyTorch FP32 | 94.8% | 6.6 | 10.3 MB | 1.0× |
-| ONNX | 94.8% | 11.2 | 10.1 MB | 1.7× |
-| OpenVINO FP16 | 94.8% | 6.4 | 5.4 MB | 1.0× |
-| **OpenVINO INT8** | **93.2%** | **13.0** | **3.2 MB** | **2.0×** |
+| Format | mAP@0.5 | Raw FPS* | Full Pipeline FPS† | Size | Speedup |
+|--------|---------|----------|-------------------|------|---------|
+| PyTorch FP32 | 94.8% | ~4 | 2.3 | 10.3 MB | 1.0× |
+| ONNX | 94.8% | ~8 | 9.3 | 10.1 MB | 4.0× |
+| OpenVINO FP16 | 94.8% | ~4 | 4.3 | 5.4 MB | 1.9× |
+| **OpenVINO INT8** | **93.2%** | **~24** | **13.9 (avg), up to 18** | **3.2 MB** | **6.0×** |
+
+<sub>*Raw inference on static frame after warmup. †Multithreaded video pipeline (decode + inference + display) on 720p dash-cam footage — real-time viable for ADAS warnings.</sub>
 
 ---
 

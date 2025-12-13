@@ -17,6 +17,7 @@ demo_recordings/
 
 # --- Documentation Cleanup ---
 CLEANUP.md
-Whitepaper/V*.pdf
-Whitepaper/V*.docx
-Whitepaper/For_Prep/
+Whitepaper/
+
+# --- Experimental Scripts ---
+deploy_onnx.py
