@@ -144,11 +144,15 @@ Training was done on Google Colab with a T4 GPU. To reproduce:
 
 ## 📝 Whitepaper
 
-Full technical details in [`Whitepaper/V5.md`](Whitepaper/V5.md):
+📄 **[Download PDF](Whitepaper/Whitepaper_Driving_Narrator.pdf)** — Full IEEE-formatted technical paper.
+
+✏️ **[View/Edit on Overleaf](https://www.overleaf.com/read/cnrqfyhphfrw#de9b6c)** — LaTeX source (read-only link)
+
+Covers:
 - Methodology & system architecture
 - Quantization pipeline (FP32 → INT8)
-- Failure mode analysis
-- Engineering trade-offs
+- Benchmark results & failure analysis
+- Future work (VPU acceleration, Android deployment, TTS integration)
 
 ---
 

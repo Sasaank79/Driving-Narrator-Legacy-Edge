@@ -17,7 +17,8 @@ demo_recordings/
 
 # --- Documentation Cleanup ---
 CLEANUP.md
-Whitepaper/
+Whitepaper/*
+!Whitepaper/Whitepaper_Driving_Narrator.pdf
 
 # --- Experimental Scripts ---
 deploy_onnx.py
