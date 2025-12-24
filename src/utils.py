@@ -13,8 +13,10 @@ import queue
 
 class VideoReader:
     """
-    Multi-threaded video reader for non-blocking frame capture.
-    Uses producer-consumer pattern with queue.
+    Reads video frames in a separate background thread.
+    
+    This decoupling ensures that the main inference loop isn't blocked by I/O latency,
+    keeping the FPS high and the UI responsive.
     """
     
     def __init__(self, video_path: str, queue_size: int = 5):

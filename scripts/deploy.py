@@ -1,6 +1,8 @@
 """
-Multithreaded Deploy - Real-time traffic sign detection
-Uses INT8 OpenVINO model for CPU inference
+Real-time Traffic Sign Detection (Deploy)
+
+Optimized for 720p 60fps video processing using quantized INT8 models.
+Falls back to efficient CPU inference if no GPU is available.
 """
 import cv2
 import time

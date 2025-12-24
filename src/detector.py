@@ -14,8 +14,9 @@ except ImportError:
 
 class TrafficSignDetector:
     """
-    Wrapper for YOLOv11-based traffic sign detection.
-    Supports PyTorch, ONNX, and OpenVINO models.
+    Handles object detection requests using YOLOv11. 
+    Design to run seamlessly across different model formats including PyTorch, ONNX, and OpenVINO 
+    to ensure the best performance on available hardware.
     """
     
     # Default paths relative to project root

@@ -1,10 +1,10 @@
 """
-Comprehensive Benchmark Suite - V3 Metrics
-Tests: PyTorch, ONNX, OpenVINO FP32, OpenVINO INT8
+Performance Benchmark Suite
 
-Two benchmark modes:
-1. Static: Pure inference time (model only)
-2. Pipeline: Full video pipeline (read + resize + inference)
+Validates model inference speed across different backends (PyTorch, ONNX, OpenVINO).
+Runs two types of tests:
+1. Static: Pure model inference time (theoretical max FPS).
+2. Pipeline: Full system throughput including video decoding and preprocessing (real-world FPS).
 """
 import cv2
 import time
