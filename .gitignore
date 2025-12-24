@@ -53,3 +53,14 @@ CLEANUP.md
 
 # Reports JSON (regenerable)
 reports/*.json
+
+# Private Research & Drafts
+RM_6*
+Whitepaper/
+*.pdf
+*.tex
+docs/
+yolo11n_lisa/
+*.log
+
+
