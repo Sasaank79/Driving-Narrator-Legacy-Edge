@@ -28,13 +28,14 @@ LISA_stratified/
 
 # Training runs (regenerable)
 runs/
+yolo11n_lisa/
 
-# Model weights (use GitHub releases)
+# Model weights (use GitHub releases for large files)
 models/*.pt
 models/*.onnx
 models/*_openvino_model/
 
-# Paper and documentation (will add later)
+# Whitepapers and docs (separate from code)
 docs/
 Whitepaper/
 Whitepaper_Source.md
@@ -44,6 +45,7 @@ Whitepaper_Driving_Narrator.docx
 # Personal reference files
 RM_6.pdf
 RM_6.txt
+RM_6*
 
 # Demo recordings
 demo_recordings/
@@ -51,16 +53,15 @@ demo_recordings/
 # Old cleanup notes
 CLEANUP.md
 
-# Reports JSON (regenerable)
+# Reports JSON (regenerable, PNG kept)
 reports/*.json
 
-# Private Research & Drafts
-RM_6*
-Whitepaper/
+# Temp benchmark folders
+reports_new/
+reports_new_2/
+
+# Misc
 *.pdf
 *.tex
-docs/
-yolo11n_lisa/
 *.log
-
-
+.pytest_cache/
