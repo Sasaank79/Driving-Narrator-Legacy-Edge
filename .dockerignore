@@ -1,0 +1,36 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env
+venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter & Notebooks
+.ipynb_checkpoints
+notebooks/
+
+# Model Training Artifacts (Large)
+runs/
+yolo11n_lisa/
+
+# Data & Large Assets (Video)
+*.mp4
+*.mov
+*.avi
+*.gif
+LISA_stratified/
+
+# Temp & Reports
+reports_new/
+reports_new_2/
+*.log
+*.pdf
+*.docx
